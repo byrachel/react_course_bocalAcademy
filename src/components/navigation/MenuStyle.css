@@ -1,6 +1,6 @@
 .navigation {
-    width: 100%;
-    background-color: lightgray;
-    display: flex;
-    justify-content: space-between;
+  width: 100%;
+  background-color: lightgray;
+  display: flex;
+  justify-content: space-between;
 }
