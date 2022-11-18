@@ -4,3 +4,27 @@
   display: flex;
   justify-content: space-between;
 }
+
+.layout {
+  position: relative;
+}
+
+.nav-button {
+  background: none;
+  border: none;
+  padding: 0.6em 1.2em;
+  cursor: pointer;
+}
+.nav-button:focus {
+  outline: none;
+}
+
+.menu-layout {
+  position: absolute;
+  background-color: whitesmoke;
+  top: 4rem;
+  width: 100%;
+  height: 100vh;
+  text-align: center;
+  padding: 1.5rem;
+}

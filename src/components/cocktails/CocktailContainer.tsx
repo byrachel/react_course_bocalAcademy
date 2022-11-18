@@ -5,7 +5,7 @@ import { CocktailInterface } from './CocktailInterface';
 import './Cocktails.css';
 
 export default function CocktailContainer() {
-  const [search, setSearch] = useState<string | null>('test');
+  const [search, setSearch] = useState<string | null>(null);
   const [cocktails, setCocktails] = useState<CocktailInterface[] | null>(null);
   const [cocktailsSuggestion, setCocktailsSuggestion] = useState<{
     show: boolean;
