@@ -1,4 +1,4 @@
-import data from '../../list.json';
+import data from './list.json';
 import Movie from './Movie';
 
 interface MovieInterface {
@@ -7,7 +7,7 @@ interface MovieInterface {
 }
 
 export default function MoviesList() {
-  const moviesList = data.list;
+  const moviesList: any = data.list;
   return (
     <>
       <div className="title">
