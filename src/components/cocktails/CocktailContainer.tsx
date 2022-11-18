@@ -13,16 +13,13 @@ export default function CocktailContainer() {
   }>({ show: false, list: [] });
 
   useEffect(() => {
-    const getCocktails = (search: string) => {
+    if (search) {
       fetch(
         `https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${search}`,
       )
         .then((res) => res.json())
         .then((data) => setCocktails(data.drinks))
         .catch(() => setCocktails(null));
-    };
-    if (search) {
-      getCocktails(search);
     }
   }, [search]);
 
@@ -44,11 +41,7 @@ export default function CocktailContainer() {
       {cocktailsSuggestion.show && cocktailsSuggestion.list.length > 0 ? (
         <ul className="suggestions">
           {cocktailsSuggestion.list.map((suggestion, index) => (
-            <li
-              key={index}
-              onClick={() => handleSuggestion(suggestion)}
-              style={{ width: '50%' }}
-            >
+            <li key={index} onClick={() => handleSuggestion(suggestion)}>
               {suggestion}
             </li>
           ))}
