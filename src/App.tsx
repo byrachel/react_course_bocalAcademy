@@ -8,6 +8,7 @@ import MenuContainer from './components/navigation/MenuContainer';
 import './App.css';
 import UserForm from './components/reducer/UserForm';
 import Menu from './components/navigation/Menu';
+import Wallet from './components/wallet/Wallet';
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
           <Route path="/form" element={<Form />} />
           <Route path="/movies" element={<MoviesList />} />
           <Route path="/usercard" element={<UserForm />} />
+          <Route path="/wallet" element={<Wallet />} />
         </Routes>
       </div>
     </div>

@@ -18,6 +18,13 @@ export default function Menu({ setDisplayMenu }: Props) {
       <p
         role="button"
         style={{ cursor: 'pointer' }}
+        onClick={() => goTo('/wallet')}
+      >
+        Wallet (RTK)
+      </p>
+      <p
+        role="button"
+        style={{ cursor: 'pointer' }}
         onClick={() => goTo('/usercard')}
       >
         User Card (useReducer)

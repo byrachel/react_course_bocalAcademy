@@ -12,7 +12,6 @@ export default function UserForm() {
   const [newMail, setNewMail] = useState(null);
   const [newName, setNewName] = useState(null);
 
-  console.log(user);
   return (
     <>
       <div className="title">
