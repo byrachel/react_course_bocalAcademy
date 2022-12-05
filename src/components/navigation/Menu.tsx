@@ -1,18 +1,27 @@
 import { useNavigate } from 'react-router-dom';
 
 interface Props {
-  setDisplayMenu: (arg: boolean) => void;
+  setDisplayMenu?: (arg: boolean) => void;
 }
 
 export default function Menu({ setDisplayMenu }: Props) {
   const navigate = useNavigate();
 
   const goTo = (slug: string) => {
-    setDisplayMenu(false);
+    if (setDisplayMenu) {
+      setDisplayMenu(false);
+    }
     return navigate(slug);
   };
   return (
     <div className="menu-layout">
+      <p
+        role="button"
+        style={{ cursor: 'pointer' }}
+        onClick={() => goTo('/usercard')}
+      >
+        User Card (useReducer)
+      </p>
       <p
         role="button"
         style={{ cursor: 'pointer' }}

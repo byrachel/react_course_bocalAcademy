@@ -7,6 +7,7 @@ import CocktailContainer from './components/cocktails/CocktailContainer';
 import MenuContainer from './components/navigation/MenuContainer';
 import './App.css';
 import UserForm from './components/reducer/UserForm';
+import Menu from './components/navigation/Menu';
 
 function App() {
   return (
@@ -14,12 +15,13 @@ function App() {
       <MenuContainer />
       <div style={{ margin: 10 }}>
         <Routes>
-          <Route path="/" element={<UserForm />} />
+          <Route path="/" element={<Menu />} />
           <Route path="/cocktails" element={<CocktailContainer />} />
           <Route path="/books" element={<ArticleList />} />
           <Route path="/lottery" element={<Lottery />} />
           <Route path="/form" element={<Form />} />
           <Route path="/movies" element={<MoviesList />} />
+          <Route path="/usercard" element={<UserForm />} />
         </Routes>
       </div>
     </div>
