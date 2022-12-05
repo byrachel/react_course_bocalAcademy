@@ -13,3 +13,8 @@
 .book-content {
   margin-left: 1.5rem;
 }
+
+.spaceBetween {
+  display: flex;
+  justify-content: space-between;
+}
