@@ -1,4 +1,4 @@
-import { useState, useReducer } from 'React';
+import { useState, useReducer } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { add, sub, empty, updateDevise, updateUser } from './WalletSlice';
 
@@ -14,6 +14,7 @@ export default function Wallet() {
   const user = useSelector((state) => state.wallet.user);
   const devise = useSelector((state) => state.wallet.devise);
   const deposit = useSelector((state) => state.wallet.deposit);
+  const history = useSelector((state) => state.wallet.historic);
 
   const handleNewUserName = () => {
     if (newUserName) {
@@ -99,11 +100,27 @@ export default function Wallet() {
           <button
             type="button"
             onClick={() => dispatch(sub(subMoney))}
-            disabled={deposit <= subMoney}
+            disabled={deposit < subMoney}
           >
             ok
           </button>
         </div>
+      </div>
+      <div className="card">
+        {history.length > 0 ? (
+          history.map((elt, idx) => (
+            <div className="spaceBetween" key={idx}>
+              <p>
+                {elt.action} {elt.amount} {elt.devise}
+              </p>
+              <p>
+                {elt.deposit} {devise}
+              </p>
+            </div>
+          ))
+        ) : (
+          <p>Aucune action a été effectuée</p>
+        )}
       </div>
     </>
   );
