@@ -9,6 +9,7 @@ import './App.css';
 import UserForm from './components/reducer/UserForm';
 import Menu from './components/navigation/Menu';
 import Wallet from './components/wallet/Wallet';
+import Login from './components/user/Login';
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
           <Route path="/movies" element={<MoviesList />} />
           <Route path="/usercard" element={<UserForm />} />
           <Route path="/wallet" element={<Wallet />} />
+          <Route path="/login" element={<Login />} />
         </Routes>
       </div>
     </div>
